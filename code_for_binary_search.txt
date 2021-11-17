@@ -1,0 +1,32 @@
+List = [1,3,4,5,8,11,13] 
+
+def BinarySearch(List, n ,low, high): 
+    
+    mid = (low + high)//2
+
+    if high < low : 
+       
+       return -1
+       
+
+    if List[mid] == n:
+        
+        return mid
+
+    elif List[mid] > n : 
+        return BinarySearch(List, n, low, mid-1) 
+
+    else: 
+        return BinarySearch(List, n, mid-1, high)
+print("Enter the roll no to be searched") 
+
+n = int(input()) 
+
+
+print("........ Searching using Binary Search ........") 
+
+if BinarySearch(List, n, 0, len(List)-1) == -1:
+    print("Student with roll no", n, "has not attented the training program")
+
+else: 
+    print("Student with roll no", n, "has attended the training program")
